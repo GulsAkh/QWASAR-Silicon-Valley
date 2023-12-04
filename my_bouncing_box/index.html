@@ -1,0 +1,42 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >Guls_Akh</div>
+  <script type="text/javascript">
+  var x = 0;
+  var y = 0;
+  var xspeed = 1;
+  var yspeed = 1;
+  
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const elem = document.getElementById("my_bouncing_box");
+
+
+ id = setInterval(frame, 5);
+  function frame() {
+elem.style.top = y + 'px';
+elem.style.left = x + 'px';
+
+x = x + xspeed;
+y = y + yspeed;
+
+
+if (x + 100 > width || x < 0) { 
+    xspeed *= -1; 
+}  
+
+if (y + 100 > height || y < 0) { 
+    yspeed *= -1; 
+}  
+
+<!--please uncomment the lines to see how my crazy bouncing box turns from bottom to top, from left to right-->
+/*else if (x <= width || x <= 0) {
+    x = xspeed * x
+    
+}
+else if (y <= height || y <= 0) {
+     y = yspeed * y
+}*/
+}
+
+  </script>
+</html>
